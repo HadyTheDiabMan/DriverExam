@@ -62,7 +62,7 @@ public boolean passed(char[]studentAnswers)
 	else
 		return true;
 }
-public int questionsMissed(char[]studentAnswers)
+public int[] questionsMissed(char[]studentAnswers)
 {
 	int numberIncorrect=0;
 	int[]  questionIncorrect = new int[studentAnswers.length];
@@ -71,13 +71,13 @@ public int questionsMissed(char[]studentAnswers)
 		if(studentAnswers[i]!=correctAnswers[i])
 		{
 			
-			questionIncorrect[i]=i;
+			questionIncorrect[i]=i++;
 			
-			return questionIncorrect[i++];
+			
 		}
 		
 	}
-	
+	return questionIncorrect;
 }
 
 
